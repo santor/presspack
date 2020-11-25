@@ -69,7 +69,7 @@ add_action('after_setup_theme', function () {
 
 
 add_action('rest_api_init', function () {
-    $namespace = 'presspack/v1';
+    $namespace = 'api/v1';
     register_rest_route($namespace, '/path/(?P<url>.*?)', array(
         'methods'  => 'GET',
         'callback' => 'get_post_for_url',

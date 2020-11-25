@@ -125,10 +125,10 @@ module.exports = {
     new BrowserSyncPlugin({
       notify: false,
       host: 'localhost',
-      port: 4000,
+      port: 4000, // this is the port you develop on. Can be anything.
       logLevel: 'silent',
       files: ['./template/*.php'],
-      proxy: `http://localhost:${listenPort}/`,
+      proxy: `http://localhost:${listenPort}/`, // This port must match docker-compose.yml
     }),
   ].filter(Boolean),
 };

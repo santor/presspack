@@ -1,39 +1,39 @@
 <?php get_header(); ?>
 
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
+<main role="main" aria-label="Content">
+    <!-- section -->
+    <section>
 
-			<h1><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?></h1>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
-				<?php the_content(); ?>
-				
+                <!-- article -->
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php edit_post_link(); ?>
+                    <?php the_content(); ?>
 
-			</article>
-			<!-- /article -->
 
-		<?php endwhile; ?>
+                    <?php edit_post_link(); ?>
 
-		<?php else: ?>
+                </article>
+                <!-- /article -->
 
-			<!-- article -->
-			<article>
+            <?php endwhile; ?>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+        <?php else : ?>
 
-			</article>
-			<!-- /article -->
+            <!-- article -->
+            <article>
 
-		<?php endif; ?>
+                <h2><?php _e('Sorry, nothing to display.', 'html5blank'); ?></h2>
 
-		</section>
-		<!-- /section -->
-	</main>
+            </article>
+            <!-- /article -->
+
+        <?php endif; ?>
+
+    </section>
+    <!-- /section -->
+</main>
 <?php get_footer(); ?>
