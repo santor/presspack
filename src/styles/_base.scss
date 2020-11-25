@@ -22,5 +22,7 @@ a {
 }
 
 h1{
-  color: #34ac1f;
+  color: $primary;
+  text-transform: capitalize;
+  font-size: 4rem;
 }
