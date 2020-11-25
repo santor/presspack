@@ -11,6 +11,10 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const path = require('path');
 const fs = require('fs');
+const dotenv = require('dotenv').config({
+  path: path.resolve(__dirname, '../../.env')
+});
+const listenPort = dotenv.parsed.PROJECT_PORT;
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebookincubator/create-react-app/issues/637
@@ -124,7 +128,7 @@ module.exports = {
       port: 4000,
       logLevel: 'silent',
       files: ['./template/*.php'],
-      proxy: 'http://localhost:9009/',
+      proxy: `http://localhost:${listenPort}/`,
     }),
   ].filter(Boolean),
 };
