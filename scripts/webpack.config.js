@@ -44,7 +44,11 @@ module.exports = {
   module: {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
-      { parser: { requireEnsure: false } },
+      {
+        parser: {
+          requireEnsure: false
+        }
+      },
       // Transform ES6 with Babel
       {
         test: /\.js?$/,
@@ -63,20 +67,13 @@ module.exports = {
             options: {
               ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
               plugins: () => [
-                autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9" // React doesn't support IE8 anyway
-                  ]
-                })
+                autoprefixer()
               ]
             }
           },
           "sass-loader"
-          ],
-        }
+        ],
+      }
     ],
   },
   optimization: {
@@ -117,17 +114,17 @@ module.exports = {
       filename: 'assets.json',
     }),
     DEV &&
-      new FriendlyErrorsPlugin({
-        clearConsole: false,
-      }),
+    new FriendlyErrorsPlugin({
+      clearConsole: false,
+    }),
     DEV &&
-      new BrowserSyncPlugin({
-        notify: false,
-        host: 'localhost',
-        port: 4000,
-        logLevel: 'silent',
-        files: ['./template/*.php'],
-        proxy: 'http://localhost:9009/',
-      }),
+    new BrowserSyncPlugin({
+      notify: false,
+      host: 'localhost',
+      port: 4000,
+      logLevel: 'silent',
+      files: ['./template/*.php'],
+      proxy: 'http://localhost:9009/',
+    }),
   ].filter(Boolean),
 };
