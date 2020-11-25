@@ -27,7 +27,8 @@
 ```bash
 git clone git@github.com:jaredpalmer/presspack.git
 yarn install
-composer install # if you want plugins ( not required )
+# if you want plugins and the wordpress core for intellisense
+composer install # ( not required )
 docker-compose up
 ```
 

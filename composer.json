@@ -6,6 +6,7 @@
     "url": "https://wpackagist.org"
   }],
   "require": {
+    "johnpbloch/wordpress-core": "^5.5.3",
     "wpackagist-plugin/advanced-custom-fields": "^4.4.11",
     "wpackagist-plugin/members": "^1.1.3",
     "wpackagist-plugin/acf-to-rest-api": "^2.2.1"
